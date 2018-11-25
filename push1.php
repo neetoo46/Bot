@@ -24,7 +24,7 @@ $content = file_get_contents("http://phonenana.com/line-bot/get-token.php?id=$id
 //header("Location:http://phonenana.com/line-bot/get-token.php?id=$id");
 $arrayPostData['to'] = $id;
 $arrayPostData['messages'][0]['type'] = "text";
-$arrayPostData['messages'][0]['text'] ="พร้อมรายงานผลแล้วจ้า !!";
+$arrayPostData['messages'][0]['text'] ="พร้อมรายงานผลยี่กีแล้วจ้า !!";
 $arrayPostData['messages'][1]['type'] = "sticker";
 $arrayPostData['messages'][1]['packageId'] = "2";
 $arrayPostData['messages'][1]['stickerId'] = "34";
