@@ -9,11 +9,12 @@ $arrayHeader[] = "Authorization: Bearer {$accessToken}";
 $message = $arrayJson['events'][0]['message']['text'];
 //รับ id ของผู้ใช้
 $id = $arrayJson['events'][0]['source']['groupId'];
+$userid = $arrayJson['events'][0]['source']['userId'];
 
 
 
 if($message == "gettoken1"){ //vip
-$content = file_get_contents("http://phonenana.com/line-bot/get-token.php?id=$id&member=1");
+$content = file_get_contents("http://phonenana.com/line-bot/get-token.php?id=$id&userid=$userid&status=1");
 //header("Location:http://phonenana.com/line-bot/get-token.php?id=$id");
 $arrayPostData['to'] = $id;
 $arrayPostData['messages'][0]['type'] = "text";
