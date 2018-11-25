@@ -11,13 +11,6 @@ $message = $arrayJson['events'][0]['message']['text'];
 $id = $arrayJson['events'][0]['source']['groupId'];
 
 
-/*  $arrayPostData['to'] = $id;
-  $arrayPostData['messages'][0]['type'] = "text";
-  $arrayPostData['messages'][0]['text'] ="คำสั่งในการเรียกเลข อยู่ช่วงเวลาปรับปรุง ขออภัยในความไม่สะดวกครับ ดูเลขเพิ่มเติมได้ที่ :http://www.phonenana.com";
-  $arrayPostData['messages'][1]['type'] = "sticker";
-  $arrayPostData['messages'][1]['packageId'] = "2";
-  $arrayPostData['messages'][1]['stickerId'] = "34";
-  pushMsg($arrayHeader,$arrayPostData);*/
 
 if($message == "gettoken1"){ //vip
 $content = file_get_contents("http://phonenana.com/line-bot/get-token.php?id=$id&member=1");
@@ -30,10 +23,14 @@ $arrayPostData['messages'][1]['packageId'] = "2";
 $arrayPostData['messages'][1]['stickerId'] = "34";
 pushMsg($arrayHeader,$arrayPostData);
 
-}if($message == "gettoken2"){ //free
-$content = file_get_contents("http://phonenana.com/line-bot/get-token.php?id=$id&member=2");
-//header("Location:http://phonenana.com/line-bot/get-token.php?id=$id");
-
+}if($message == "ปิดการทำงาน"){ //free
+  $arrayPostData['to'] = $id;
+  $arrayPostData['messages'][0]['type'] = "text";
+  $arrayPostData['messages'][0]['text'] ="ปิดการรายงานผลแล้วจ้า !!";
+  $arrayPostData['messages'][1]['type'] = "sticker";
+  $arrayPostData['messages'][1]['packageId'] = "2";
+  $arrayPostData['messages'][1]['stickerId'] = "35";
+  pushMsg($arrayHeader,$arrayPostData);
 }
 
 
