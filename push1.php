@@ -19,8 +19,8 @@ $arrayPostData['to'] = $id;
 $arrayPostData['messages'][0]['type'] = "text";
 $arrayPostData['messages'][0]['text'] ="พร้อมรายงานผลยี่กีแล้วจ้า !!";
 $arrayPostData['messages'][1]['type'] = "sticker";
-$arrayPostData['messages'][1]['packageId'] = "2";
-$arrayPostData['messages'][1]['stickerId'] = "34";
+$arrayPostData['messages'][1]['packageId'] = "1";
+$arrayPostData['messages'][1]['stickerId'] = "2";
 pushMsg($arrayHeader,$arrayPostData);
 
 }if($message == "ปิดการทำงาน"){ //free
