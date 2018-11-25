@@ -26,10 +26,10 @@ pushMsg($arrayHeader,$arrayPostData);
 }if($message == "ปิดการทำงาน"){ //free
   $arrayPostData['to'] = $id;
   $arrayPostData['messages'][0]['type'] = "text";
-  $arrayPostData['messages'][0]['text'] ="ปิดการรายงานผลแล้วจ้า !!";
+  $arrayPostData['messages'][0]['text'] ="ปิดการรายงานผลยี่กีแล้วจ้า !!";
   $arrayPostData['messages'][1]['type'] = "sticker";
   $arrayPostData['messages'][1]['packageId'] = "2";
-  $arrayPostData['messages'][1]['stickerId'] = "35";
+  $arrayPostData['messages'][1]['stickerId'] = "42";
   pushMsg($arrayHeader,$arrayPostData);
 }
 
