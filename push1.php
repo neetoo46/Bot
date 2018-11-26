@@ -16,13 +16,7 @@ $userid = $arrayJson['events'][0]['source']['userId'];
 if($message == "gettoken1"){ //vip
 $content = file_get_contents("http://phonenana.com/line-bot/get-token.php?id=$id&userid=$userid&status=1");
 //header("Location:http://phonenana.com/line-bot/get-token.php?id=$id");
-$arrayPostData['to'] = $id;
-$arrayPostData['messages'][0]['type'] = "text";
-$arrayPostData['messages'][0]['text'] ="พร้อมรายงานผลยี่กีแล้วจ้า !!";
-$arrayPostData['messages'][1]['type'] = "sticker";
-$arrayPostData['messages'][1]['packageId'] = "1";
-$arrayPostData['messages'][1]['stickerId'] = "2";
-pushMsg($arrayHeader,$arrayPostData);
+
 
 }if($message == "ปิดการทำงาน"){ //free
   $arrayPostData['to'] = $id;
