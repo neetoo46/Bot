@@ -13,21 +13,30 @@ $userid = $arrayJson['events'][0]['source']['userId'];
 
 
 
-if($message == "gettoken1"){ //vip
+if($message == "gettoken"){ //vip
 $content = file_get_contents("http://phonenana.com/line-bot/get-token.php?id=$id&userid=$userid&status=1");
-//header("Location:http://phonenana.com/line-bot/get-token.php?id=$id");
 
 
-}if($message == "ปิดการทำงาน"){ //free
-  $arrayPostData['to'] = $id;
+}if($message == "ปิดการทำงาน"){
+  $content = file_get_contents("http://phonenana.com/line-bot/onoff.php?id=$id&userid=$userid&status=0");
+/*  $arrayPostData['to'] = $id;
   $arrayPostData['messages'][0]['type'] = "text";
   $arrayPostData['messages'][0]['text'] ="ปิดการรายงานผลยี่กีแล้วจ้า !!";
   $arrayPostData['messages'][1]['type'] = "sticker";
   $arrayPostData['messages'][1]['packageId'] = "2";
   $arrayPostData['messages'][1]['stickerId'] = "42";
-  pushMsg($arrayHeader,$arrayPostData);
+  pushMsg($arrayHeader,$arrayPostData);*/
 }
-
+if($message == "เปิดการทำงาน"){
+  $content = file_get_contents("http://phonenana.com/line-bot/onoff.php?id=$id&userid=$userid&status=1");
+/*  $arrayPostData['to'] = $id;
+  $arrayPostData['messages'][0]['type'] = "text";
+  $arrayPostData['messages'][0]['text'] ="เปิดการรายงานผลยี่กีแล้วจ้า !!";
+  $arrayPostData['messages'][1]['type'] = "sticker";
+  $arrayPostData['messages'][1]['packageId'] = "2";
+  $arrayPostData['messages'][1]['stickerId'] = "42";
+  pushMsg($arrayHeader,$arrayPostData);*/
+}
 
 function pushMsg($arrayHeader,$arrayPostData){
    $strUrl = "https://api.line.me/v2/bot/message/push";
