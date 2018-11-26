@@ -17,7 +17,7 @@ if($message == "gettoken"){ //vip
 $content = file_get_contents("http://phonenana.com/line-bot/get-token.php?id=$id&userid=$userid&status=1");
 
 
-}if($message == "ปิดการทำงาน"){
+}if($message == "bot:ปิดการทำงาน"){
   $content = file_get_contents("http://phonenana.com/line-bot/onoff.php?id=$id&userid=$userid&status=0");
 /*  $arrayPostData['to'] = $id;
   $arrayPostData['messages'][0]['type'] = "text";
@@ -27,7 +27,7 @@ $content = file_get_contents("http://phonenana.com/line-bot/get-token.php?id=$id
   $arrayPostData['messages'][1]['stickerId'] = "42";
   pushMsg($arrayHeader,$arrayPostData);*/
 }
-if($message == "เปิดการทำงาน"){
+if($message == "bot:เปิดการทำงาน"){
   $content = file_get_contents("http://phonenana.com/line-bot/onoff.php?id=$id&userid=$userid&status=1");
 /*  $arrayPostData['to'] = $id;
   $arrayPostData['messages'][0]['type'] = "text";
