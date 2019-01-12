@@ -11,14 +11,12 @@ $message = $arrayJson['events'][0]['message']['text'];
 $id = $arrayJson['events'][0]['source']['groupId'];
 //$userid = $arrayJson['events'][0]['source']['userId'];
 $Test = $arrayJson['events'][0]['source']['memberJoined'];
-if($Test !=""){
+
   $arrayPostData['to'] = $id;
   $arrayPostData['messages'][0]['type'] = "text";
-  $arrayPostData['messages'][0]['text'] ="OK";
+  $arrayPostData['messages'][0]['text'] =$Test;
   pushMsg($arrayHeader,$arrayPostData);
 
-
-}
 
 if($message == "gettoken"){
     $arrayPostData['to'] = $id;
