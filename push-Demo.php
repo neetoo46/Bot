@@ -10,14 +10,13 @@ $message = $arrayJson['events'][0]['message']['text'];
 //รับ id ของผู้ใช้
 $id = $arrayJson['events'][0]['source']['groupId'];
 $userid = $arrayJson['events'][0]['source']['userId'];
-่$join= $arrayJson['events'][0]['source']['joined.members'];
+่$join= $arrayJson['events'][0]['source']['memberJoined'];
 
 if(่$join !=""){
   $arrayPostData['to'] = $id;
   $arrayPostData['messages'][0]['type'] = "text";
   $arrayPostData['messages'][0]['text'] ="ยินดีต้อนรับจ้า";
   pushMsg($arrayHeader,$arrayPostData);
-
 }
 if($message == "gettoken"){
     $arrayPostData['to'] = $id;
