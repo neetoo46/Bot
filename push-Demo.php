@@ -9,7 +9,17 @@ $arrayHeader[] = "Authorization: Bearer {$accessToken}";
 $message = $arrayJson['events'][0]['message']['text'];
 //รับ id ของผู้ใช้
 $id = $arrayJson['events'][0]['source']['groupId'];
-$userid = $arrayJson['events'][0]['source']['userId'];
+//$userid = $arrayJson['events'][0]['source']['userId'];
+$Test = $arrayJson['events'][0]['source']['memberJoined'];
+if($Test !=""){
+  $arrayPostData['to'] = $id;
+  $arrayPostData['messages'][0]['type'] = "text";
+  $arrayPostData['messages'][0]['text'] ="OK";
+  pushMsg($arrayHeader,$arrayPostData);
+
+
+}
+
 if($message == "gettoken"){
     $arrayPostData['to'] = $id;
     $arrayPostData['messages'][0]['type'] = "text";
