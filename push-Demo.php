@@ -6,7 +6,7 @@ $arrayHeader = array();
 $arrayHeader[] = "Content-Type: application/json";
 $arrayHeader[] = "Authorization: Bearer {$accessToken}";
 //รับข้อความจากผู้ใช้
-$Test = $arrayJson['events']['type']['memberJoined']['userId'];
+$Test = $arrayJson['events'][0]['type']['memberJoined']['userId'];
 $message = $arrayJson['events'][0]['message']['text'];
 //รับ id ของผู้ใช้
 $id = $arrayJson['events'][0]['source']['groupId'];
