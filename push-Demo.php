@@ -15,7 +15,13 @@ $id = $arrayJson['events'][0]['source']['groupId'];
 if($arrayJson['events'][0]['type']=='memberJoined'){
   $arrayPostData['to'] = $id;
   $arrayPostData['messages'][0]['type'] = "text";
-  $arrayPostData['messages'][0]['text'] ="ยินดีต้อนรับ".$message;
+  $arrayPostData['messages'][0]['text'] ="ยินดีต้อนรับ";
+  pushMsg($arrayHeader,$arrayPostData);
+}
+if($arrayJson['events'][0]['type']=='memberLeft'){
+  $arrayPostData['to'] = $id;
+  $arrayPostData['messages'][0]['type'] = "text";
+  $arrayPostData['messages'][0]['text'] ="ขอบคุณที่ใช้บริการค่ะ";
   pushMsg($arrayHeader,$arrayPostData);
 }
 
