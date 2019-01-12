@@ -15,7 +15,7 @@ $id = $arrayJson['events'][0]['source']['groupId'];
 if($arrayJson['events'][0]['type']=='memberJoined'){
   $arrayPostData['to'] = $id;
   $arrayPostData['messages'][0]['type'] = "text";
-  $arrayPostData['messages'][0]['text'] ="OK";
+  $arrayPostData['messages'][0]['text'] ="ยินดีต้อนรับ".$message;
   pushMsg($arrayHeader,$arrayPostData);
 }
 
