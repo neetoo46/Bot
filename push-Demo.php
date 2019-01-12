@@ -6,16 +6,16 @@ $arrayHeader = array();
 $arrayHeader[] = "Content-Type: application/json";
 $arrayHeader[] = "Authorization: Bearer {$accessToken}";
 //รับข้อความจากผู้ใช้
-$Test = $arrayJson['events'][0]['type']['memberJoined']['replyToken']['source']['groupId']['type']['group'];
+//$Test = $arrayJson['events'][0]['type']['memberJoined']['replyToken']['source']['groupId']['type']['group'];
 $message = $arrayJson['events'][0]['message']['text'];
 //รับ id ของผู้ใช้
 $id = $arrayJson['events'][0]['source']['groupId'];
 //$userid = $arrayJson['events'][0]['source']['userId'];
 
-if($Test != ""){
+if($arrayJson['events'][0]['type']=='memberJoined'){
   $arrayPostData['to'] = $id;
   $arrayPostData['messages'][0]['type'] = "text";
-  $arrayPostData['messages'][0]['text'] =$Test;
+  $arrayPostData['messages'][0]['text'] ="OK";
   pushMsg($arrayHeader,$arrayPostData);
 }
 
