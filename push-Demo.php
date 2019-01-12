@@ -22,7 +22,7 @@ if($Test != ""){
 if($message == "gettoken"){
     $arrayPostData['to'] = $id;
     $arrayPostData['messages'][0]['type'] = "text";
-    $arrayPostData['messages'][0]['text'] =$id;
+    $arrayPostData['messages'][0]['text'] =$Test;
     pushMsg($arrayHeader,$arrayPostData);
 }
 
