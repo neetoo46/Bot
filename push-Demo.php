@@ -6,7 +6,7 @@ $arrayHeader = array();
 $arrayHeader[] = "Content-Type: application/json";
 $arrayHeader[] = "Authorization: Bearer {$accessToken}";
 //รับข้อความจากผู้ใช้
-$Test = $arrayJson['events'][0]['type']['memberJoined'];
+$Test = $arrayJson['events']['type']['memberJoined']['userId'];
 $message = $arrayJson['events'][0]['message']['text'];
 //รับ id ของผู้ใช้
 $id = $arrayJson['events'][0]['source']['groupId'];
@@ -15,7 +15,7 @@ $id = $arrayJson['events'][0]['source']['groupId'];
 if($Test != ""){
   $arrayPostData['to'] = $id;
   $arrayPostData['messages'][0]['type'] = "text";
-  $arrayPostData['messages'][0]['text'] ="Test".$Test;
+  $arrayPostData['messages'][0]['text'] =$Test;
   pushMsg($arrayHeader,$arrayPostData);
 }
 
